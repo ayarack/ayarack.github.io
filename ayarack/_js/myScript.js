@@ -1,42 +1,49 @@
-//initializing variables to create a canvas 
+// write a program that creates rock paper scissors logic using circle, square, triangle
+//global variables
+let player;
+let mouseCoords = [];
+
+ // objects
+ var myCircle = {
+  x: 100,
+  y: 75,
+  w: 100,
+  radius: 50,
+};
+
+// gets mouse position when clicked
+
+addEventListener('mousedown', mouseClick);
+
+function mouseClick(e) {
+  console.log( `
+    Screen X/Y: ${e.screenX}, ${e.screenY}
+	Client X/Y: ${e.clientX}, ${e.clientY}`);
+	mouseCoords =  [e.clientX, e.clientY];
+  if (myCircle.x < mouseCoords[0] && myCircle.x + myCircle.w > mouseCoords[0] -25){
+    console.log("inside");
+
+  }
+}
+
+
+//initialize variables
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-let myNumber = 10;
+let choices =  ["rock", "paper", "scissors"];
 
-if (true) {
-  alert("You will make a choice!");
-  if(myNumber > 20){
-    alert("uh oh...");
-  }
+function randChoice(x){
+    return Math.floor(Math.random()*x);
 }
 
-let drawTri = true;
-let drawCir = false;
+let cpuChoice = 0;
+// let cpuChoice = randChoice(choices.length);
 
-let player = prompt("Circle, square, or triangle?");
-let cpu = "square";
-
-function CST(){
-  if (player == "triangle" && cpu == "square") {
-    drawTriangle();
-  }
-}
-
-function CST2(){
-  if (player == "circle" && cpu == "square") {
-    drawCircle();
-  }
-}
-
-function CST3(){
-  if (player == "square" && cpu == "square") {
-    drawSquare();
-  }
-}
+console.log(choices[cpuChoice]);
 
 function drawTriangle() {
-      //ctx.beginPath();
+      ctx.beginPath();
       ctx.moveTo(75, 50);
       ctx.lineTo(100, 75);
       ctx.lineTo(100, 25);
@@ -45,19 +52,20 @@ function drawTriangle() {
 
   function drawSquare(){
     ctx.fillRect(25, 25, 100, 100);
-    //ctx.clearRect(45, 45, 60, 60);
-    //ctx.strokeRect(50, 50, 50, 50);
-  }
-  function drawCircle(){
-    //ctx.beginPath();
-    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-    ctx.fill(); 
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
   }
 
+ 
+
+console.log(myCircle.x);
+
+  function drawCircle(){
+    ctx.arc(myCircle.x, myCircle.y, myCircle.radius, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+drawCircle();
   function main(){
-   CST();
-   CST2();
-   CST3();
   }
 
 main();

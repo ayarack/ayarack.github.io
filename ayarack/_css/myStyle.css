@@ -1,3 +1,7 @@
+p {
+  color: red;
+}
+
 /* ID */
 #canvas {
   border:1px solid #000000;
