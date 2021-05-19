@@ -1,0 +1,35 @@
+p {
+    color: red;
+  }
+  
+  /* ID */
+  #canvas {
+    border:1px solid #000000;
+  }
+  /* Class */
+  .borders{
+    margin: 0 auto;
+    width: 2000px;
+    height: 1000px;
+  }
+  .character {
+    position: absolute;
+    top: 45px;
+    float: left;
+    background-color: #0000FF;
+    width: 700px;
+    height: 500px;
+  }
+  
+  .button {
+    float: right;
+    height: 50px;
+    width: 2000px;
+    background-color: #db0c40;
+  }
+  
+  .text {
+    height: 50px;
+    width: 2000px;
+    background-color: #FFFFFF;
+  }
