@@ -1,12 +1,8 @@
-p {
-    color: red;
-  }
-  
-  /* ID */
+ /*ID*/
   #canvas {
     border:1px solid #000000;
   }
-  /* Class */
+  /*Class*/
   .borders{
     margin: 0 auto;
     width: 2000px;
