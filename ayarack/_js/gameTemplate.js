@@ -1,3 +1,8 @@
+//Sources
+// https://www.w3schools.com/js/default.asp
+// https://www.codecademy.com/learn/introduction-to-javascript
+// https://stackoverflow.com/
+
 //functions
 function rand(max) {
   return Math.floor(Math.random() * max);
@@ -18,8 +23,10 @@ function changeBrightness(factor, sprite) {
   var context = virtCanvas.getContext("2d");
   context.drawImage(sprite, 0, 0, 500, 500);
 
+  //variable
   var imgData = context.getImageData(0, 0, 500, 500);
 
+  //for loop
   for (let i = 0; i < imgData.data.length; i += 4) {
     imgData.data[i] = imgData.data[i] * factor;
     imgData.data[i + 1] = imgData.data[i + 1] * factor;
@@ -113,10 +120,12 @@ function Maze(Width, Height) {
       y: 0
     };
     var numCells = width * height;
+    //while loop
     while (!isComp) {
       move = false;
       mazeMap[pos.x][pos.y].visited = true;
 
+      //if statement
       if (numLoops >= maxLoops) {
         shuffle(dirs);
         maxLoops = Math.round(rand(height / 8));
@@ -473,6 +482,7 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
   this.bindKeyDown();
 }
 
+//variables
 var mazeCanvas = document.getElementById("mazeCanvas");
 var ctx = mazeCanvas.getContext("2d");
 var sprite;
